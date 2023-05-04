@@ -4,10 +4,32 @@
     margin-left: 20px;
 }
 
-.search-icon {
-    position: absolute;
-    z-index: 10;
-    right: 36%;
-    top: 20px;
-    color: blue;
+// .search-icon {
+//     position: absolute;
+//     z-index: 10;
+//     right: 36%;
+//     top: 20px;
+//     color: blue;
+// }
+
+.search-input{
+    outline: none;
+    // width:auto;
+    width: 600px;
+    background-color: white;
+    border-radius: 5px;
+    border-block: none;
+    padding: 4px 10px;
+    border: 0px;
+}
+.search-div{
+    width:auto;
+    display: flex;
+    margin:2px;
+    background-color: white;
+    border-radius: 5px;
+}
+.btn-outline-secondary {
+    
+    --bs-btn-hover-color: #0d6efd !important;
 }

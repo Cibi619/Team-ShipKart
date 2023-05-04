@@ -7,6 +7,11 @@ import { HeaderComponent } from './component/header/header.component';
 import { CartComponent } from './component/cart/cart.component';
 import { ProductsComponent } from './component/products/products.component';
 import { HostBindinDirective } from './host-bindin.directive';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ApiService } from './service/api.service';
+import { ProductDtlsComponent } from './component/product-dtls/product-dtls.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,13 +19,17 @@ import { HostBindinDirective } from './host-bindin.directive';
     HeaderComponent,
     CartComponent,
     ProductsComponent,
-    HostBindinDirective
+    HostBindinDirective,
+    ProductDtlsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

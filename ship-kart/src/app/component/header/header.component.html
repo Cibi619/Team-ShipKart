@@ -3,18 +3,24 @@
         <div style="margin-left: 10%;" class="navbar-brand align-item-center d-flex">
             <i style="font-size: 40px;color: white;" class="fa fa-truck">&nbsp;
             </i>
-        <strong style="color:white">
+        <strong style="color:white;padding: 3px;">
             ShipKart
         </strong>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search products">
+        <div class="search-div">
+            <div>
+            <input type="text" class="search-input" placeholder="Search products" name="search" [(ngModel)]="search">
+            </div>            
+            <div><button (click)="onSearch()" class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                <span class="fa fa-search search-icon"></span>
+            </button>
+            </div>
         </div>
-        <span class="fa fa-search search-icon"></span>
-        </div>
-        <button class="btn btn-primary">
+        
+        <button style="position: absolute;right:0" routerLink="/cart" class="btn btn-primary">
             <i style="font-size:40px; right:3%" class="fa fa-shopping-cart"></i>
             <div styel class="badge bg-danger">1</div>
         </button>
+        </div>
+        
     </div>
-    <app-products></app-products>
 </header>

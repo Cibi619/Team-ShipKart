@@ -1,0 +1,17 @@
+.left-div{
+    position: sticky;
+    width:40%;
+    left:0;
+    overflow: hidden;
+}
+.right-div{
+    
+    width:60%;
+    right:0;
+    
+}
+.product:hover{
+    transform: scale(1.1);
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in;
+}

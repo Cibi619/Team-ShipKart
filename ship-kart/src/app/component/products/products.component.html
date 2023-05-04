@@ -1,28 +1,49 @@
 <div class="card-top container-fluid">
     <div class="container d-flex">
         <div appHostBindin class="item">
-            <a>
-                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+            <a (click)="filterSelect('')">
+                <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
                 <h6 >All products</h6>
             </a>
         </div>
         <div appHostBindin class="item">
-            <a >
-                <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+            <a (click)="filterSelect('electronics')">
+                <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
                 <h6 >Electronics</h6>
             </a>
         </div>
         <div appHostBindin class="item">
-            <a >
-                <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
-                <h6 >Fashion</h6>
+            <a (click)="filterSelect('men\'s clothing')">
+                <img style="width: 62px; margin-top: 5px;"  src="https://bananarepublicfactory.gapfactory.com/webcontent/0029/690/928/cn29690928.jpg" alt="">
+                <h6 >Men's Clothing</h6>
             </a>
         </div>
         <div appHostBindin class="item">
-            <a>
+            <a (click)="filterSelect('jewelery')">
                 <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
                 <h6 >Jewllery</h6>
             </a>
         </div>
+        <div appHostBindin class="item">
+            <a (click)="filterSelect('women\'s clothing')">
+                <img style="width: 62px; margin-top: 5px;"  src="https://images.express.com/is/image/expressfashion/0039_04353424_2199_f001?cache=on&wid=480&fmt=jpeg&qlt=85,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon" alt="">
+                <h6 >Women's Clothing</h6>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory ">
+            <div class="card col-md-3">
+                <img routerLink="/productdtls" (click)="onSelectedProduct(item)" src="{{item.image}}"  alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong> ${{item.price}}</p>
+                <button routerLink="/productdtls" (click)="onSelectedProduct(item)" class="btn btn-primary" >View Details</button>&nbsp;
+                <button class="btn btn-primary" >Add to cart</button>
+            </div>
+        </ng-container>
+
     </div>
 </div>

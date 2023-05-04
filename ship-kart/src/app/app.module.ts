@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule} from '@angular/material/button';
+import {MatBadgeModule} from '@angular/material/badge';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { CartComponent } from './component/cart/cart.component';
 import { ProductsComponent } from './component/products/products.component';
-import { HostBindinDirective } from './host-bindin.directive';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { ApiService } from './service/api.service';
 import { ProductDtlsComponent } from './component/product-dtls/product-dtls.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HostBindinDirective } from './host-bindin.directive';
+import { ApiService } from './service/api.service';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductDtlsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
+    MatFormFieldModule,
+    MatBadgeModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

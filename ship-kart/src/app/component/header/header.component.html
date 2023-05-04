@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
     <div class="navbar bg-primary shadow">
         <div style="margin-left: 10%;" class="navbar-brand align-item-center d-flex">
             <i style="font-size: 40px;color: white;" class="fa fa-truck">&nbsp;
@@ -23,4 +23,54 @@
         </div>
         
     </div>
-</header>
+</header> -->
+<mat-toolbar color="primary">
+    <mat-toolbar-row >
+       <button mat-icon-button (click)="sidenav.toggle();">
+        <mat-icon >menu</mat-icon>
+       </button>
+       <span>
+        <i style="font-size: 40px;color: white;" class="fa fa-truck">&nbsp;
+        </i>
+        </span>
+        <span>Shipkart</span>
+        <!-- <div class="search-div">
+            <div>
+            <input type="text" class="search-input" placeholder="Search products" name="search" [(ngModel)]="search">
+            </div>            
+            <div><button (click)="onSearch()" class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="button">
+                <span class="fa fa-search search-icon"></span>
+            </button>
+            </div>
+        </div> -->
+       
+        <span style="left:25%;position: absolute;padding:2px;background-color: white;border-radius: 5px;">
+            <input style="outline: none;border:none; margin-left: 2px;" name="search" [(ngModel)]="search" matInput placeholder="Search products">
+            <button (click)="onSearch()" style="color:blue" matSuffix mat-button><mat-icon >search</mat-icon></button>
+        </span>
+        <span style="position: absolute;right:3%;" >
+        <!-- <button style="position: absolute;right:0;" routerLink="/cart" class="btn btn-primary"> -->
+           
+            <mat-icon matBadge="15" matBadgeColor="warn" routerLink="/cart">shopping_cart</mat-icon>
+            <!-- <i style="font-size:30px; right:3%" class="fa fa-shopping-cart"></i> -->
+            <!-- <div matBadge="1" matBadgeSize="large" class="demo-section"></div> -->
+        <!-- </button> -->
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav style="padding:20px" #sidenav >
+        <mat-nav-list>
+            <a routerLink="/products" mat-list-item>All products</a>
+            <a routerLink="/cart" mat-list-item> <i class="fa fa-shopping-cart" style="color:#3f51b5"></i> Cart</a>
+            <a mat-list-item><i class="fa fa-question-circle" style="color:#3f51b5"></i>Help & feedback</a>
+            <a mat-list-item><i class="fa fa-sign-in" style="color:#3f51b5"></i>LogIn</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height:88vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

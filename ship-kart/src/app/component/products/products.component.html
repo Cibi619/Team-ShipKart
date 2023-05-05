@@ -1,5 +1,59 @@
+<div class="animation-card">
+    <span>
+        
+        
+    </span>
+    
+    <span>
+        <h1 class="hdr-dashboard">New Arrivals</h1> 
+        <button class="btn-dashboard"> Show now</button>  
+    </span>
+</div>
 <div class="card-top container-fluid">
-    <div class="container d-flex">
+    <mat-grid-list cols="5" rowHeight="100px">
+        <mat-grid-tile>
+            <div appHostBindin class="item">
+                <a (click)="filterSelect('')">
+                    <img  src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+                    <h6 >All products</h6>
+                </a>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div appHostBindin class="item">
+                <a (click)="filterSelect('electronics')">
+                    <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+                    <h6 >Electronics</h6>
+                </a>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div appHostBindin class="item">
+                <a (click)="filterSelect('men\'s clothing')">
+                    <img  src="https://bananarepublicfactory.gapfactory.com/webcontent/0029/690/928/cn29690928.jpg" alt="">
+                    <h6 >Men's Clothing</h6>
+                </a>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div appHostBindin class="item">
+                <a (click)="filterSelect('jewelery')">
+                    <img src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+                    <h6 >Jewllery</h6>
+                </a>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div appHostBindin class="item">
+                <a (click)="filterSelect('women\'s clothing')">
+                    <img  src="https://images.express.com/is/image/expressfashion/0039_04353424_2199_f001?cache=on&wid=480&fmt=jpeg&qlt=85,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon" alt="">
+                    <h6 >Women's Clothing</h6>
+                </a>
+            </div>
+        </mat-grid-tile>
+        
+    </mat-grid-list>
+    <!-- <div class="container d-flex">
         <div appHostBindin class="item">
             <a (click)="filterSelect('')">
                 <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
@@ -30,18 +84,30 @@
                 <h6 >Women's Clothing</h6>
             </a>
         </div>
-    </div>
+    </div> -->
 </div>
-<div class="container">
+<div style="position:absolute;padding: 2px;left:10%;" class="container">
     <div class="row">
         <ng-container *ngFor="let item of filterCategory ">
-            <div class="card col-md-3">
+            <div class="card col-md-2">
                 <img routerLink="/productdtls" (click)="onSelectedProduct(item)" src="{{item.image}}"  alt="">
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
                 <p><strong>Price:</strong> ${{item.price}}</p>
-                <button routerLink="/productdtls" (click)="onSelectedProduct(item)" class="btn btn-primary" >View Details</button>&nbsp;
-                <button class="btn btn-primary" >Add to cart</button>
+                <div style="padding-bottom: 4px;">
+                    
+                    <span style="width:6ch;border-radius: 5px;"  >
+                        <strong [ngClass]="{
+                            'green' : item.rating.rate > 4,
+                            'orange' : item.rating.rate < 4 && item.rating.rate >=3,
+                            'red':item.rating.rate <3,
+                         }">{{item.rating.rate}} </strong>
+                        <span><mat-icon style="color:gold;font-size:16px;height: 15px;">star</mat-icon></span>
+                    </span>
+                   <strong>{{item.rating.count}} Reviews</strong>
+                </div>
+                <button routerLink="/productdtls" (click)="onSelectedProduct(item)" mat-raised-button color="primary">View Details</button>&nbsp;
+                <button mat-raised-button color="primary" >Add to cart</button>
             </div>
         </ng-container>
 

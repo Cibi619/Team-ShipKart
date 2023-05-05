@@ -44,7 +44,7 @@ filterItems( ) {
  debugger;
   if(this.search!=''){
     console.log(this.filterCategory);
-  this.filterCategory= this.productList.filter((el:any) => el.title.includes(this.search));
+  this.filterCategory= this.productList.filter((el:any) => el.title.toLowerCase().includes(this.search.toLowerCase()));
   
 }
 }

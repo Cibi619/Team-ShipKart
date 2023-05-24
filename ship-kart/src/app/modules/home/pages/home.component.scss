@@ -1,63 +1,9 @@
-.card-top {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: .25rem;
-}
-
-.item img {
-    width: 80px;
-    height: 80px;
-}
-
-.item {
-    margin: 0px 15px;
-    text-align: center;
-    width: 100%;
-
-}
-
-// .item a:hover {
-//     color: blue;
-// }
-
-.card {
-    padding: 5px;
-    margin: 5px;
-    
-}
-
-.card img {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 15px;
-    transition: 0.3s ease-in-out;
-}
-
-.card img:hover {
-    transition: 0.3s ease-in-out;
-    transform: scale(1.1);
-}
-.green{
-    color: rgb(7, 187, 7);
-}
-.red{
-    color: red;
-}
-.orange{
-    color: orange;
-}
 @keyframes productdisplay {
     0%{background-image: url('../../../assets/images/banner-04.jpg')};
     15%{background-image: url('../../../assets/images/banner-01.jpg')};
     30%{background-image: url('../../../assets/images/banner-02.jpg')};
     60%{background-image: url('../../../assets/images/slide-01.jpg')};
-    
+
     100%{background-image: url('../../../assets/images/slide-06.jpg')};
 }
 .animation-card{

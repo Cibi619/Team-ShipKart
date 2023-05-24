@@ -1,9 +1,9 @@
 import { Directive,HostBinding,HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appHostBindin]'
+  selector: '[appHostBinding]'
 })
-export class HostBindinDirective {
+export class HostBindingDirective {
 
   constructor() { }
   Hovercolor:string='blue';

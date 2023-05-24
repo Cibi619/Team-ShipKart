@@ -1,1 +1,90 @@
-<p>cart works!</p>
+<ng-container *ngIf="cartList.length !=0">
+    <div class="container" style="top:10%;position:absolute">
+        <div class="row">
+            
+            <div class="col-sm" style="width:70%;">
+                <table class="table-shopping-cart">
+                    <tbody>
+                        <tr class="table_head">
+                            <th class="column-1">
+                                PRODUCT
+                            </th>
+                            <th class="column-2">
+                                
+                            </th>
+                            <th class="column-3">
+                                PRICE
+                            </th>
+                            <th class="column-4">
+                                QUANTITY
+                            </th>
+                            <th class="column-5">
+                                TOTAL
+                            </th>
+                            <th class="column-5">
+
+                            </th>
+                        </tr>
+                        <ng-container *ngFor="let item of cartList ">
+                        <tr class="table_row">
+                            <td class="column-1">
+                                {{item.title}}
+                            </td>
+                            <td class="column-2">
+                                <img style="width:84px;height:84px;padding :5px"  src="{{item.image}}"  alt="">
+                            </td>
+                            <td class="column-3">
+                                ${{item.price}}
+                            </td>
+                            <td class="column-4">
+                               1
+                            </td>
+                            <td class="column-5">
+                               ${{item.price}}
+                            </td>
+                            <td class="column-5">
+                                <mat-icon (click)="removeItem(item)">delete_outline</mat-icon>
+                             </td>
+                        </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm" style="width:30%;" style="border:1px solid #e6e6e6; ">
+                <div class="row">
+                    <span>
+                        CART TOTALS
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <span>
+                            SUB TOTAL
+                        </span>
+                    </div>
+                    <div class="col-md">
+                        <span>${{totalPrice}}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <button style="position:absolute;bottom: 0%;right: 0;" class="btn-dashboard" (click)="printPage()">print</button> -->
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="cartList.length==0">
+    <div class="container">
+        <div class="emptycart" >
+            <span>
+                <h1 >Your car is empty!</h1>
+            </span>        
+           <span >
+                <img style="width:350px;height:350px;" src="../../../assets/images/emptycart.png" alt="">
+               
+           </span> 
+           <span>
+            <button routerLink ="/products" class="btn-dashboard"> Show now</button>  
+           </span> 
+        </div>
+    </div>
+</ng-container>
+

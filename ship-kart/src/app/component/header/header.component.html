@@ -29,11 +29,11 @@
        <button mat-icon-button (click)="sidenav.toggle();">
         <mat-icon >menu</mat-icon>
        </button>
-       <span>
+       <span  class="ship" routerLink="/home">
         <i style="font-size: 40px;color: white;" class="fa fa-truck">&nbsp;
         </i>
         </span>
-        <span>Shipkart</span>
+        <span class="ship" routerLink="/home">Shipkart</span>
         <!-- <div class="search-div">
             <div>
             <input type="text" class="search-input" placeholder="Search products" name="search" [(ngModel)]="search">
@@ -46,12 +46,13 @@
        
         <span style="left:25%;position: absolute;padding:2px;background-color: white;border-radius: 5px;">
             <input style="outline: none;border:none; margin-left: 2px;" name="search" [(ngModel)]="search" matInput placeholder="Search products">
-            <button (click)="onSearch()" style="color:blue" matSuffix mat-button><mat-icon >search</mat-icon></button>
+            <button routerLink="/products" (click)="onSearch()" style="color:blue" matSuffix mat-button><mat-icon >search</mat-icon></button>
         </span>
-        <span style="position: absolute;right:3%;" >
+        <span style="position: absolute;right:3%;" routerLink="/cart">
         <!-- <button style="position: absolute;right:0;" routerLink="/cart" class="btn btn-primary"> -->
-           
-            <mat-icon matBadge="15" matBadgeColor="warn" routerLink="/cart">shopping_cart</mat-icon>
+            <i style="font-size:30px; right:3%" class="fa fa-shopping-cart"></i>
+            <div matBadge="{{cartList.length}}" routerLink="/cart" matBadgeSize="medium" class="demo-section"></div>
+            <!-- <mat-icon matBadge="{{cartList.length}}" matBadgeColor="warn" routerLink="/cart">shopping_cart</mat-icon> -->
             <!-- <i style="font-size:30px; right:3%" class="fa fa-shopping-cart"></i> -->
             <!-- <div matBadge="1" matBadgeSize="large" class="demo-section"></div> -->
         <!-- </button> -->

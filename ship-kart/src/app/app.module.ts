@@ -12,26 +12,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { HomeModule } from './modules/home/home.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { CartComponent } from './component/cart/cart.component';
-import { ProductsComponent } from './component/products/products.component';
-import { ProductDtlsComponent } from './component/product-dtls/product-dtls.component';
-import { HostBindinDirective } from './host-bindin.directive';
+import { HostBindingDirective } from './host-bindin.directive';
 import { ApiService } from './service/api.service';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ProductDtlModule } from './modules/productDtls/product-dtls.module';
+import { ProductModule } from './modules/product/product.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CartComponent,
-    ProductsComponent,
-    HostBindinDirective,
-    ProductDtlsComponent
+    HostBindingDirective,
   ],
   imports: [
     BrowserModule, 
+    HomeModule,
     MatFormFieldModule,
     MatGridListModule,
     MatBadgeModule,
@@ -43,7 +43,10 @@ import { ApiService } from './service/api.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    ProductDtlModule,
+    ProductModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

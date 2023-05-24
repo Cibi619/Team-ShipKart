@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild, ElementRef  } from '@angular/core';
+//printchanges
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'RetailSite';
+  title = 'Shipkart';
 }
